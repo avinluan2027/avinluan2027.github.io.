@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+            <meta charset="utf-8">
+            <title>Dimistus Whiz Academy</title>
+            <meta name="viewport" content="width-device-width,initial-scale=1">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+            <style>
+                *{
+                    box-sizing: border-box;
+                    padding: 0;
+                    margin: 0;
+                }
+    
+                body{
+                    font-family: sans-serif;
+                    line-height: 1.5;
+                }
+    
+                .home-bg{
+                    height: 40vh;
+                    background:linear-gradient(rgba(255,255,255), rgba(48,129,208)), url(images/sdaad.png);
+                    background-position: 50% 100%;
+                    background-repeat: no-repeat;
+                    background-attachment:  fixed;
+                    text-align:center;
+                    color: #3081D0;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+    
+                .home-bg h3{
+                    font-size: 1.3rem;
+                    font-family: 'Jost', sans-serif;
+                    font-weight: 400;
+                }
+    
+                .home-bg h2{
+                    font-size: 3rem;
+                    font-family: 'Jost', sans-serif;
+                    text-transform: uppercase;
+                    padding: 0.43rem 0;
+                    letter-spacing: 4px;
+                }
+                
+                .text{
+                    font-weight: 300;
+                    font-family: 'Jost', sans-serif;
+                    opacity: 0.9;
+                }
+
+                .home-bg .text{
+                    margin: 1.6rem 0;
+                }
+
+                .mobile-container {
+                max-width: 480px;
+                margin: auto;
+                background-color: rgb(4, 35, 138);
+                height: 500px;
+                color: white;
+                border-radius: 10px;
+            }
+
+            .topnav {
+                overflow: hidden;
+                background-color: #333;
+                position: relative;
+            }
+    
+            .topnav #myLinks {
+                display: none;
+            }
+    
+            .topnav a {
+                color: white;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+                display: block;
+            }
+    
+            .topnav a.icon {
+                background: black;
+                display: block;
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+    
+            .cover{
+                    width: 100%;
+                    display: block;
+                }
+    
+            .navbar {
+                overflow: hidden;
+                padding: 10px;
+                background-color: #0f62a5;
+            }
+            
+            .navbar img {
+            width: 70px;
+            float: left; 
+        }
+
+        .navbar h7 {
+            float: left;
+            color: white;
+            font-family: 'Jost', sans-serif;
+            margin: 15px 0px 0px 0px
+        }
+            .navbar a{
+                float:right;
+                font-family: 'Jost', sans-serif;
+                color: white;
+                text-align: center;
+                padding: 14px 20px;
+                text-decoration: none;
+            }
+    
+            .navbar a.right {
+                float: right;
+            }
+    
+            .navbar a:hover {
+                background-color: #ddd;
+                color: rgb(4, 35, 138);
+            }
+
+            .navbar svg {
+                fill: white;
+            }
+
+            .navbar svg:hover {
+                background-color: #ddd;
+                color: rgb(4, 35, 138);
+            }
+
+            .sidebar {
+                position: fixed;
+                top: 0;
+                right: 0;
+                height: 400px;
+                width: 250px;
+                z-index: 999;
+                background-color: #0f61a5d2;
+                box-shadow: -10px 0 10px rgba(0, 0, 0, 0.2);
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                backdrop-filter: blur (20px);
+            }
+
+            .sidebar a{
+                font-family: 'Jost', sans-serif;
+                color: white;
+                text-align: center;
+                padding: 14px 20px;
+                text-decoration: none;
+                width: 100%;
+            }
+
+            .sidebar a:hover {
+                background-color: #ddd;
+                color: rgb(4, 35, 138);
+            }
+
+            .sidebar svg {
+                fill: white;
+            }
+
+            .sidebar svg:hover {
+                background-color: #ddd;
+                color: rgb(4, 35, 138);
+            }
+
+            .menu {
+                display: none;
+            }
+
+            .course{
+                width: 80%;
+                margin: auto;
+                text-align: center;
+                padding-top: 100px;
+            }
+
+            p{
+                color: #777;
+                font-size: 14px;
+                font-weight: 300;
+                line-height: 22px;
+                padding: 10px;
+            }
+
+            .row{
+                margin-top: 5%;
+                display: flex;
+                justify-content: space-between;
+            }
+            .course-col{
+                flex-basis: 31%;
+                background: #E0F4FF;
+                margin-bottom: 5%;
+                padding: 20px 12px;
+                box-sizing: border-box;
+                transition: 0.5s;
+            }
+            
+            h3{
+                text-align: center;
+                font-weight: 600;
+                margin: 10px 0;
+            }
+
+            .course-col:hover{
+                box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+            }
+
+            @media(max-width:700px){
+                .row{
+                    flex-direction: column;
+                }
+            }
+           
+           #home{
+            background-image: linear-gradient(rgba(9, 5, 54, 0.3), rgba(5,4,46,0.7)),url("images/owl.jpg");
+            width: 100%;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-top:40px ;
+           }
+           
+           #home h2{
+            color: #fff;
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+           }
+
+           #home p{
+            width: 50%;
+            color: #fff;
+            font-size: 0.9rem;
+            line-height: 25px;
+           }
+
+           #home .btn{
+            margin-top: 30px;
+           }
+
+           #home a{
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 13px 35px;
+            background-color: #fff;
+            font-weight: 600;
+            border-radius: 5px;
+           }
+
+           #home a.blue{
+            color: #fff;
+            background: #3887BE;
+            transition: 0.3s ease;
+           }
+
+           #home a.blue:hover{
+            color: #3887BE;
+            background: #fff;
+           }
+
+           #home a.yellow{
+            color: #fff;
+            background: #EEC759;
+            transition: 0.3s ease;
+           }
+
+           #home a.yellow:hover{
+            color: #EEC759;
+            background: #fff;
+           }
+
+           #registration{
+            padding: 6vw 8vw 6vw 8vw;
+            background-image: linear-gradient(rgba(191,207,231, 0.3), rgba(89,111,183,0.5)), url("images/rpic.jpg");
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+           }
+
+           #registration .reminder{
+            color: #fff;
+           }
+
+           #registration .reminder p{
+            width: 50%;
+            color: #fff;
+            font-size: 0.95rem;
+            line-height: 25px;
+           }
+
+           #registration .reminder h1{
+            color: #fff;
+            font-size: 2rem;
+           }
+
+           #registration .reminder .time{
+            display: flex;
+            margin-top: 40px;
+           }
+
+           #registration .reminder .time .date{
+            text-align: center;
+            padding: 13px 33px;
+            background: rgba(255,255,255,0.25);
+            backdrop-filter: blur(4px);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            border-radius: 10px;
+            margin: 0 5px 10px 5px;
+            border: 2px splid rgba(255,255,255,0.18);
+            font-size: 1.1rem;
+            font-weight: 600;
+           }
+
+           #registration .form{
+            background: #fff;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+           }
+
+           #registration .form input{
+            margin: 15px 0;
+            padding: 15px 10px;
+            border: 1px solid rgba(134,182,246);
+            outline: none;
+           }
+           
+           #registration .form input::placeholder{
+            color:#3559E0;
+            font-weight: 500;
+            font-size: 0.9rem
+           }
+
+           #registration .form .btn{
+            margin-top: 20px ;
+           }
+
+           #registration .form a.yellow{
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 13px 35px;
+            background-color: #fff;
+            font-weight: 600;
+            border-radius: 5px;
+            color: #fff;
+            background: #EEC759;
+            transition: 0.3s ease;
+           }
+
+           #registration .form a.yellows:hover{
+            color: #EEC759;
+            background: #fff;
+           }
+
+           .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            }
+
+            .video-container video {
+            background-color: #BFCFE7;
+            width: 100%;
+            }
+
+            @media screen and (max-width: 600px) {
+            .video-container {
+            padding-bottom: 75%;
+            }
+            }
+
+            .title h2 {
+                font-size: 3rem;
+                font-family: 'Jost', sans-serif;
+                text-transform: uppercase;
+                letter-spacing: 4px;
+                text-align: center;
+            }
+
+            .box{
+                display: flex;
+            }
+            .container{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+            }
+
+            .item-container{
+                position: relative;
+                margin: 24px;
+                width: 320px;
+                height: 570px;
+                overflow: hidden;
+                background-color: #d7d1d1;
+                box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.15);
+                cursor: pointer;
+            }
+
+            .img-container, 
+            .body-container{
+                position:absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            .img-container img{
+                width: 100%;
+                height: max-content;
+            }
+
+            .body-container{
+                position: relative;
+            }
+
+            .overlay{
+                position: relative;
+                width: 100%;
+                height: 400px;
+                background-color: rgba(24, 83, 122, 0.6);
+                opacity: 0;
+                transition: height linear 0.4s, opacity linear 0.2s;
+            }
+
+            .item-container:hover .overlay{
+                opacity: 1;
+                height: 150px;
+            }
+
+            .event-info{
+                background-color: #fff;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 8px;
+            }
+
+            .title,.price{
+                color: #5FBDFF;
+                font-size: 1.5em;
+                font-weight: bold;
+                letter-spacing: 1px;
+                margin: 12px;
+            }
+
+            .info{
+                letter-spacing: 0.5px;
+                margin-bottom: 6px;
+            }
+
+            .separator{
+                width: 20%;
+                height: 6px;
+                background-color: #5FBDFF;
+                margin-bottom: 16px;
+            }
+
+            .additional-info{
+                border-top: 1px solid #bbb;
+                margin-top: 12px;
+                padding: 28px;
+                padding-bottom: 0;
+            }
+
+            .additional-info .info{
+                font-size: 0.9em;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            .info i{
+                color: #5FBDFF;
+                font-size: 1.1em;
+                margin-right: 4px;
+            }
+
+            .info span{
+                color: #5FBDFF;
+                font-weight: bolder;
+            }
+
+            .action{
+                color: #fff;
+                border: 3px solid #fff;
+                background-color: transparent;
+                position: absolute;
+                top: -100px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 60%;
+                outline: none;
+                cursor: pointer;
+                padding: 12px;
+                text-transform: uppercase;
+                font-size: 1.3em;
+                font-weight: bold;
+                letter-spacing: 2px;
+                transition: background-color 0.4s, top 0.4s;
+            }
+
+            .item-container:hover .action{
+                top: 50px;
+            }
+
+            .action:hover{
+                background-color: rgba(255, 255, 255, 0.2);
+            }
+
+
+            footer{
+                position: relative;
+                width: 100%;
+                background: #3884fc;
+                min-height: 100px;
+                padding: 20px 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            footer .social_icon, footer .menu{
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 10px 0;
+                flex-wrap: wrap;
+            }
+
+            footer .social_icon li, footer .menu li{
+                list-style: none;
+            }
+
+            footer .social_icon li a{
+                font-size: 2rem;
+                color: #fff;
+                margin: 0 10px;
+                display: inline-block;
+                transition: 0.5s;
+            }
+
+            footer .social_icon li a:hover{
+                transform: translateY(-10px);
+            }
+          
+            footer .menu li a{
+                font-size: 1.2rem;
+                color: #fff;
+                margin: 0 10px;
+                display: inline-block;
+                transition: 0.5s;
+                text-decoration: none;
+                opacity: 0.75;
+            }
+
+            footer .menu li a:hover{
+                opacity: 1;
+            }
+
+            footer .wave{
+                position: absolute;
+                top: -100px;
+                left: 0;
+                width: 100%;
+                height: 100px;
+                background: url(images/wave.png);
+                background-size: 1000px 100px;
+            }
+
+            footer .wave#wave1{
+                z-index: 1000;
+                opacity: 1;
+                bottom: 0;
+                animation: animateWave 4s linear infinite;
+            }
+            footer .wave#wave2{
+                z-index: 999;
+                opacity: 0.5;
+                bottom: 10px;
+                animation: animateWave_02 4s linear infinite;
+            }
+
+            footer .wave#wave3{
+                z-index: 1000;
+                opacity: 0.2;
+                bottom: 15px;
+                animation: animateWave 3s linear infinite;
+            }
+            footer .wave#wave4{
+                z-index: 999;
+                opacity: 0.7;
+                bottom: 20px;
+                animation: animateWave_02 3s linear infinite;
+            }
+
+            @keyframes animateWave{
+                0%{
+                    background-position-x: 1000px;
+                }
+                100%{
+                    background-position-x: 0px;
+                }
+            }
+
+            @keyframes animateWave_02{
+                0%{
+                    background-position-x: 0px;
+                }
+                100%{
+                    background-position-x: 1000px;
+                }
+            }
+
+            @media (max-width:620px) {
+                
+                .body {
+                    width: 100%;
+                }
+            }
+
+            @media (max-width: 930px) {
+                .navbar h7 {
+                    font-size: 13px;
+                }
+
+                .navbar a {
+                    font-size: 13px;
+                }
+
+                .navbar img {
+                    width: 55px;
+                    float: left; 
+                }
+
+                #registration .form {
+                    flex-direction: column;
+                    padding: 40px;
+                    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                }
+            }
+
+            @media (max-width: 800px) {
+                .hideOnMobile {
+                    display: none;
+                }
+
+                .navbar h7 {
+                    font-size: 15px;
+                }
+
+                .menu {
+                    display: block;
+                }
+            }
+
+            @media (max-width: 400px) {
+                .sidebar {
+                    width: 100%;
+                }
+
+                
+            }
+    
+            
+    </style>
+</head>
+
+<body>
+    <!---Header-->
+    <section class="home-section">
+        <div class="home-bg">
+            <h3>Discover the Fun at Dimistus Academy!</h3>
+            <h2>Home Page</h2>
+            <div class="line">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <p class="text">Be Part of the family here in Dimistus Whiz Academy!</p>
+        </div>
+        
+        <!--Sidebar-->
+
+        <div class="sidebar">
+            <a onclick=hideSidebar() href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a>
+            <a href="index.html">Home</a>
+            <a href="Contacts.html">Contacts</a>
+            <a href="NotableWorks.html">Notable Works</a>
+            <a href="Biology Lab.html">Biology Laboratory</a>
+            <a href="Calendar.html">Calendar</a>
+            <a href="About.html">About</a>
+        </div>
+        
+        <!---Navbar-->
+
+        <div class="navbar">
+            <img src="images/schoollogo.png" alt="">
+            <h7>DIMISTUS ACADEMY</h7>
+            <div class="menu">
+             <a onclick=showSidebar() href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></a>
+            </div>
+
+            <div class="hideOnMobile"> 
+             <a href="About.html">About</a>
+             <a href="Calendar.html">Calendar</a>
+             <a href="Biology Lab.html">Biology Laboratory</a>
+             <a href="NotableWorks.html">Notable Works</a>
+             <a href="Contacts.html">Contacts </a>
+             <a href="index.html">Home</a>
+            </div>
+        </div>
+  
+        <!---Home-->
+
+        <section id="home">
+            <h2>Enhance Your Future with Dimistus!</h2>
+            <p>Dimistus Whiz Academy is an advanced institution committed to promoting scientific curiosity and quality in chemistry education via interactive learning and hands-on experimentations.</p>
+            <div class="btn">
+                <a class="blue" href="#">Learn More</a>
+                <a class="yellow"  href="#">Visit Courses</a>
+            </div>
+        </section>
+
+        <!---Courses--->
+
+        <section class="course">
+            <h1>Courses We Offer</h1>
+            <p>Our famous science academy offers a comprehensive range of courses spanning mainly in chemistry.</p>
+
+            <div class="row">
+                <div class="course-col">
+                    <h3>Mystical Analytical Chemistry</h3>
+                        <p> Uncover the secrets of enchanted substances as you master the art of analyzing and understanding magical compositions.</p>
+                </div>
+                <div class="course-col">
+                    <h3>Quantum Computing</h3>
+                        <p> Merge the arcane with the quantum as you explore spellbinding algorithms, harness mystical qubits, and reshape the very fabric of information in the enchanting realm of quantum wizardry.</p>
+                </div>
+                <div class="course-col">
+                    <h3>Alchemy Fusion 101</h3>
+                        <p>Learn the secrets of potion crafting and transmutation in this captivating course, where chemistry meets enchantment.</p>
+                </div>
+            </div>
+        </section>
+
+        <!---Registration-->
+
+        <section id="registration">
+            <div class="reminder">
+                <p>A Hundred Opportunities await!</p>
+                <h1>Register for a Secured Future</h1>
+                <div class="time">
+                    <div class="date">
+                        15<br> Days
+                    </div>
+                    <div class="date">
+                        21<br> Hours
+                    </div>
+                    <div class="date">
+                        32<br> Mins.
+                    </div>
+                    <div class="date">
+                        21<br> Secs.
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form">
+                <h3>Create a Free Account!</h3>
+                <input type="text" placeholder="Name" name="" id="">
+                <input type="text" placeholder="Email Address" name="" id="">
+                <input type="text" placeholder="Phone Number" name="" id="">
+                <div class="btn">
+                    <a class="yellow" href="#">Submit Form</a>
+                </div>
+            </div>
+        </section>
+        
+        <!---Video-->
+
+        <div class="video-container">
+        <video width="640" height="565" controls autoplay loop>
+            <source src="images/bidjo.mov">
+        </video>
+        </div>
+
+        <!--Calendar-->
+        <div class="title">
+            <h2>School Calendar</h2>
+        </div>
+        
+        <div class="box">
+            <div class="container" >
+               <div class="item-container">
+                   <div class="img-container">
+                        <img src="images/famday.jpg" alt="#"> 
+
+                   </div>
+
+                   <div class="body-container">
+                       <div class="overlay"></div>
+
+                       <div class="event-info">
+                           <p class="title">Family Day Celebration</p>
+                           <div class="separator"></div>
+                           <p class="info">Dimistus Whiz Academy</p>
+                           <p class="price">Free</p>
+
+                           <div class="additional-info">
+                               <p class="info">
+                                   <i class="fas fa-map-marker-alt"></i>
+                                   DWA Gymnasium
+                               </p>
+
+                               <p class="info">
+                                   <i class="fas fa-calendar-alt"></i>
+                                   Fri, Dec 08, 7:30 AM PST
+                               </p>
+
+                               <p class="info-description">
+                                   Let's celebrate and honor the importance of family together. 
+                                   Come and enjoy our mini program!
+                               </p>
+                           </div>
+                       </div>
+                       <button class="action">Attend</button>
+                   </div>
+               </div>
+           </div>
+
+           <div class="container">
+               <div class="item-container">
+                   <div class="img-container">
+                        <img src="images/vawc.jpg" alt="#"> 
+
+                   </div>
+
+                   <div class="body-container">
+                       <div class="overlay"></div>
+
+                       <div class="event-info">
+                           <p class="title">Violence Against Women Seminar</p>
+                           <div class="separator"></div>
+                           <p class="info">Dimistus Whiz Academy</p>
+                           <p class="price">Free</p>
+
+                           <div class="additional-info">
+                               <p class="info">
+                                   <i class="fas fa-map-marker-alt"></i>
+                                   DWA Tower 4 Auditorium
+                               </p>
+
+                               <p class="info">
+                                   <i class="fas fa-calendar-alt"></i>
+                                   Fri, Dec 15, 8:30 AM PST
+                               </p>
+
+                               <p class="info-description">
+                                  Help us raise awareness about violence experienced by women and girls. 
+                               </p>
+                           </div>
+                       </div>
+                       <button class="action">Attend</button>
+                   </div>
+               </div>
+           </div>
+
+           <div class="container">
+               <div class="item-container">
+                   <div class="img-container">
+                        <img src="images/nutt.JPG" alt="#"> 
+
+                   </div>
+
+                   <div class="body-container">
+                       <div class="overlay"></div>
+
+                       <div class="event-info">
+                           <p class="title">Christmas Tree Lighting</p>
+                           <div class="separator"></div>
+                           <p class="info">Dimistus Whiz Academy</p>
+                           <p class="price">Free</p>
+
+                           <div class="additional-info">
+                               <p class="info">
+                                   <i class="fas fa-map-marker-alt"></i>
+                                    DWA Gymnasium
+                               </p>
+
+                               <p class="info">
+                                   <i class="fas fa-calendar-alt"></i>
+                                   Sat, Dec 16, 5:00 PM PST
+                               </p>
+
+                               <p class="info-description">
+                                   Join us for festive fun, twinkling lights, and holiday cheer. 
+                                   Let's light up the night together! 
+                               </p>
+                           </div>
+                       </div>
+                       <button class="action">Attend</button>
+                   </div>
+               </div>
+           </div>
+       </div>
+
+       <!--Footer-->
+       <br><br><br><br><br><br>
+       <footer>
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+        </div>
+        <ul class="social_icon">
+            <li><a href="#" class="fab fa-facebook-f"></a></li>
+            <li><a href="#" class="fab fa-twitter"></a></li>
+            <li><a href="#" class="fab fa-instagram"></a></li>
+            <li> <a href="#" class="fab fa-linkedin"></a></li>
+        </ul>
+        <ul class="menu">
+            <li><a href="About.html">About</a></li>
+            <li><a href="Calendar.html">Calendar</a></li>
+            <li><a href="Biology Lab.html">Biology Laboratory</a></li>
+            <li><a href="NotableWorks.html">Notable Works</a></li>
+            <li><a href="Contacts.html">Contacts</a></li>
+            <li><a href="Home.html">Home</a></li>
+        </ul>
+       </footer>
+
+       <script>
+        function showSidebar() {
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'flex'
+        }
+
+        function hideSidebar() {
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'none'
+        }
+       </script>
+
+</body>
+</html>

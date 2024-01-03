@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+            <meta charset="utf-8">
+            <title>Dimistus Whiz Academy</title>
+            <meta name="viewport" content="width=device-width,initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+            <style>
+                *{
+                    box-sizing: border-box;
+                    padding: 0;
+                    margin: 0;
+                }
+    
+                body{
+                    font-family: sans-serif;
+                    line-height: 1.5;
+                }
+    
+                .nworks-bg{
+                    height: 40vh;
+                    background:linear-gradient(rgba(255,255,255), rgba(48,129,208)), url(images/sdaad.png);
+                    background-position: 50% 100%;
+                    background-repeat: no-repeat;
+                    background-attachment:  fixed;
+                    text-align:center;
+                    color: #3081D0;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+    
+                .nworks-bg h3{
+                    font-size: 1.3rem;
+                    font-family: 'Jost', sans-serif;
+                    font-weight: 400;
+                }
+    
+                .nworks-bg h2{
+                    font-size: 3rem;
+                    font-family: 'Jost', sans-serif;
+                    text-transform: uppercase;
+                    padding: 0.43rem 0;
+                    letter-spacing: 4px;
+                }
+                
+                .text{
+                    font-weight: 300;
+                    font-family: 'Jost', sans-serif;
+                    opacity: 0.9;
+                }
+                .nworks-bg .text{
+                    margin: 1.6rem 0;
+                }
+                .mobile-container {
+                max-width: 480px;
+                margin: auto;
+                background-color: rgb(4, 35, 138);
+                height: 500px;
+                color: white;
+                border-radius: 10px;
+            }
+    
+            .topnav {
+                overflow: hidden;
+                background-color: #333;
+                position: relative;
+            }
+    
+            .topnav #myLinks {
+                display: none;
+            }
+    
+            .topnav a {
+                color: white;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+                display: block;
+            }
+    
+            .topnav a.icon {
+                background: black;
+                display: block;
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+    
+            .coverv {
+                width: 100%;
+                display: block;
+            }
+    
+            .navbar {
+                overflow: hidden;
+                padding: 10px;
+                background-color: #0f62a5;
+            }
+            
+            .navbar img {
+            width: 70px;
+            float: left; 
+            }
+
+            .navbar h7 {
+            float: left;
+            color: white;
+            font-family: 'Jost', sans-serif;
+            margin: 15px 0px 0px 0px
+            }
+
+            .navbar a{
+                float:right;
+                font-family: 'Jost', sans-serif;
+                color: white;
+                text-align: center;
+                padding: 14px 20px;
+                text-decoration: none;
+            }
+    
+            .navbar a.right {
+                float: right;
+            }
+    
+            .navbar a:hover {
+                background-color: #ddd;
+                color: rgb(4, 35, 138);
+            }
+
+            .navbar svg {
+                fill: white;
+            }
+
+            .navbar svg:hover {
+                background-color: #ddd;
+                color: rgb(4, 35, 138);
+            }
+
+            .sidebar {
+                position: fixed;
+                top: 0;
+                right: 0;
+                height: 400px;
+                width: 250px;
+                z-index: 999;
+                background-color: #0f61a5d2;
+                box-shadow: -10px 0 10px rgba(0, 0, 0, 0.2);
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                backdrop-filter: blur (20px);
+            }
+
+            .sidebar a{
+                font-family: 'Jost', sans-serif;
+                color: white;
+                text-align: center;
+                padding: 14px 20px;
+                text-decoration: none;
+                width: 100%;
+            }
+
+            .sidebar a:hover {
+                background-color: #ddd;
+                color: rgb(4, 35, 138);
+            }
+
+            .sidebar svg {
+                fill: white;
+            }
+
+            .sidebar svg:hover {
+                background-color: #ddd;
+                color: rgb(4, 35, 138);
+            }
+
+            .menu {
+                display: none;
+            }
+
+            .title,.price{
+                color: black;
+                font-size: 1.5em;
+                font-weight: bold;
+                letter-spacing: 1px;
+                margin: 12px;
+                text-align: center;
+            }
+
+            .container{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .card{
+                height: 370px;
+                width: 380px;
+                margin: 0 20px;
+                box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+            }
+
+            .card .img{
+                height:200px ;
+                width: 100%;
+            }
+
+            .card .img img{
+                height: 100%;
+                width: 100%;
+                object-fit: cover ;
+            }
+
+            .card-sonnet {
+                width: 380px;
+                margin: 0 20px;
+                box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+            }
+
+            .card-sonnet p {
+                font-size: 15px;
+                font-family: 'Jost', sans-serif;
+            }
+
+            .card-sonnet h4 {
+                font-size: 15px;
+                font-family: 'Jost', sans-serif;
+            }
+
+            .card-shakespearean {
+                width: 380px;
+                margin: 0 20px;
+                box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            }
+
+            .card-shakespearean p {
+                font-size: 15px;
+                font-family: 'Jost', sans-serif;
+            }
+
+            .card-shakespearean h4 {
+                font-size: 15px;
+                font-family: 'Jost', sans-serif;
+            }
+
+            .name {
+                font-size: 15px;
+                font-family: 'Jost', sans-serif;
+                text-transform: uppercase;
+            }
+
+            #button {
+                display: none;
+            }
+
+            #button:checked ~ .content {
+                display: block;
+            }
+
+            #button:checked ~ label {
+                display: none;
+            }
+
+            #button2 {
+                display: none;
+            }
+
+            #button2:checked ~ .content {
+                display: block;
+            }
+
+            #button2:checked ~ label {
+                display: none;
+            }
+
+            #button3 {
+                display: none;
+            }
+
+            #button3:checked ~ .content {
+                display: block;
+            }
+
+            #button3:checked ~ label {
+                display: none;
+            }
+
+            #button4 {
+                display: none;
+            }
+
+            #button4:checked ~ .content {
+                display: block;
+            }
+
+            #button4:checked ~ label {
+                display: none;
+            }
+
+            #button5 {
+                display: none;
+            }
+
+            #button5:checked ~ .content {
+                display: block;
+            }
+
+            #button5:checked ~ label {
+                display: none;
+            }
+
+            #button6 {
+                display: none;
+            }
+
+            #button6:checked ~ .content {
+                display: block;
+            }
+
+            #button6:checked ~ label {
+                display: none;
+            }
+
+            .content {
+                display: none;
+            }
+
+            .content h5 {
+                font-size: 30 px;
+                font-weight: 12 px;
+            }
+
+            label {
+                display: inline-block;
+                cursor: pointer;
+                color: white;
+                background-color: #0f62a5;
+                padding: 3px 13px;
+                border-radius: 23px;
+                margin-top: 5px;
+                margin-bottom: 10px;
+                margin-left: 5px;
+            }
+
+            .nworks-footer{
+                    padding: 2rem 0;
+                    background: linear-gradient(rgba(48,129,208), rgba(255,255,255));
+                }
+                .nworks-footer h3{
+                    font-size: 1.3rem;
+                    font-family: 'Jost', sans-serif;
+                    color: #fff;
+                    margin-bottom: 1rem;
+                    text-align: center;
+                }
+                .social-links{
+                    display: flex;
+                    justify-content: center;
+                }
+                .social-links a{
+                    text-decoration: none;
+                    width: 40px;
+                    height: 40px;
+                    color: #ffffff;
+                    border:2px solid #fff;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 0.4rem;
+                    transition: all 0.4s ease;
+                }
+                .social-links a:hover{
+                    color: #3081D0;
+                    border-color: #3081D0;
+                }
+            
+            @media (max-width: 930px) {
+                .navbar h7 {
+                    font-size: 13px;
+                }
+
+                .navbar a {
+                    font-size: 13px;
+                }
+
+                .navbar img {
+                    width: 55px;
+                    float: left; 
+                }
+
+                #registration .form {
+                    flex-direction: column;
+                    padding: 40px;
+                    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                }
+
+           
+            }
+
+                @media (max-width: 930px) {
+                .navbar h7 {
+                    font-size: 13px;
+                }
+
+                .navbar a {
+                    font-size: 13px;
+                }
+
+                .navbar img {
+                    width: 55px;
+                    float: left; 
+                }
+
+                #registration .form {
+                    flex-direction: column;
+                    padding: 40px;
+                    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                }
+            }
+
+            @media (max-width: 800px) {
+                .hideOnMobile {
+                    display: none;
+                }
+
+                .navbar h7 {
+                    font-size: 15px;
+                }
+
+                .menu {
+                    display: block;
+                }
+            }
+
+            @media (max-width: 400px) {
+                .sidebar {
+                    width: 100%;
+                }
+
+            }
+
+            @media (max-width:400px) {
+
+                .container{
+                    display:inline-block;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+
+                .card {
+                    margin-inline-start: auto;
+                    width: fit-content;
+                }
+                .card-sonnet {
+                    margin-inline-start: auto;
+                    width: fit-content;
+                }
+
+                .card-shakespearean {
+                    margin-inline-start: auto;
+                    width: fit-content;
+                }
+            }
+
+    </style>
+</head>
+
+<body>
+    <section class="nworks-section">
+        <div class="nworks-bg">
+            <h3>Great Works Made by Great Students</h3>
+            <h2>Notable Works</h2>
+            <div class="line">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <p class="text">Be Part of the family here in Dimistus Whiz Academy!</p>
+        </div>
+
+        <!--Sidebar-->
+
+        <div class="sidebar">
+            <a onclick=hideSidebar() href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a>
+            <a href="index.html">Home</a>
+            <a href="Contacts.html">Contacts</a>
+            <a href="NotableWorks.html">Notable Works</a>
+            <a href="Biology Lab.html">Biology Laboratory</a>
+            <a href="Calendar.html">Calendar</a>
+            <a href="About.html">About</a>
+        </div>
+        
+        <!---Navbar-->
+
+        <div class="navbar">
+            <img src="images/schoollogo.png" alt="">
+            <h7>DIMISTUS ACADEMY</h7>
+            <div class="menu">
+             <a onclick=showSidebar() href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></a>
+            </div>
+
+            <div class="hideOnMobile"> 
+             <a href="About.html">About</a>
+             <a href="Calendar.html">Calendar</a>
+             <a href="Biology Lab.html">Biology Laboratory</a>
+             <a href="NotableWorks.html">Notable Works</a>
+             <a href="Contacts.html">Contacts </a>
+             <a href="index.html">Home</a>
+            </div>
+        </div>
+       
+        <p class="title">Poets</p>
+
+        <div class="container">
+            <div class="card">
+                <div class="img">
+                    <img src="images/benis.jpg" alt="">
+                </div>
+                <div class="top-text">
+                    <div class="name">LARA VENISSE D.C ANDRES</div>
+                    <p>9 Pinatubo </p>
+                </div>
+                <div class="bottom-text">
+                    <div class="text">With love being their theme, she translated Ruth B's song Dandelions to a Petrarchan sonnet and 
+                        the famous song Losin' Control by Russ to a Shakespearean sonnet.</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img">
+                    <img src="images/mikha.jpg" alt="">
+                </div>
+                <div class="top-text">
+                    <div class="name">MIKHAILA YVANNA L. BAUTISTA</div>
+                    <p>9 Pinatubo</p>
+                </div>
+                <div class="bottom-text">
+                    <div class="text">With love being their theme, she translated Rebbeca Sugar's song Love Like You to a Petrarchan sonnet and 
+                        the famous song Line Without a Hook by Ricky Montgomery to a Shakespearean sonnet.</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img">
+                    <img src="images/aly.jpg" alt="">
+                </div>
+                <div class="top-text">
+                    <div class="name">ALYSSANDRA D. VINLUAN</div>
+                    <p>9 Pinatubo</p>
+                </div>
+                <div class="bottom-text">
+                    <div class="text">With love being their theme, she translated Unique Salonga's song Panahon to a Petrarchan sonnet and 
+                        Zild's famous song Ibang Planeta to a Shakespearean sonnet.</div>
+                </div>
+            </div>
+        </div>
+
+        <p class="title">Petrarchan Sonnets</p>
+
+        <div class="container">
+            <div class="card-sonnet">
+                <input id="button" type="checkbox">
+                  
+                    <h2>Hope for Love Amidst Dandelions</h2>
+                    <p>This sonnet is a passionate tribute to a remarkable love that describes the lover as a captivating presence amid life's excitement. 
+                        It communicates a desire to join hearts in a calm and enduring link through vivid imagery of dandelions and the desire for eternal relationships.</p> 
+                
+                    <div class="content">
+                    </br> </br> <h4> Amidst a roaring crowd, your voice is a melody, </br>
+                        In every game, your moves are graceful prance, </br>
+                        The joy you bring, a cherished chance, </br>
+                        No soul comparable, your love, a certainty. </br>
+                        Love, they say, visits you once in an eternity, </br>
+                        Dear, I’m certain, it’s you who have my heart at a glance. </br>
+                        Within the field where dandelions dance, </br>
+                        I wish upon each, for you, to be with me in serenity. </br>
+                        In your eyes, eternity resides, </br>
+                        With every smile, my soul feels at ease. </br>
+                        Dandelions, witness my hope and strides, </br>
+                        Praying that you’ll bring my heart’s keys. </br>
+                        Dandelions, I hope you abide, </br>
+                        I’ll have what I want, love and peace. </h4>
+
+                      <label for="button">Show Less</label> 
+                    </div>
+
+                      <label for="button">Read More</label> 
+            </div>
+    
+            <div class="card-sonnet">
+                <input id="button2" type="checkbox">
+                  
+                    <h2>Change for You</h2>
+                    <p>This sonnet compares oneself to a moth who aspires to be a butterfly, symbolizing feelings of inadequacy and a desire for change to equal the perceived beauty and elegance of another. 
+                        It questions the depth of feelings from someone seemingly pure and lovely, while grappling with the uncertainty of self-worth and desire for metamorphosis.</p> 
+                
+                    <div class="content">
+                    </br> </br> <h4>  If you knew who I really am </br>
+                        Would you still want me back or leave me to rot? </br>
+                        I will do everything, starting from how I should act to how should I not. </br>
+                        I would go beyond on what I believe I am. </br>
+                        Change who I am, look pass my sham </br>
+                        All of these, just to become a butterfly like you, that I wished to be an awful lot. </br>
+                        Why do you think of me as that of lovely, when I truly am not? </br>
+                        Will you not push me away and tell me to scram? </br>
+                        It has come to me that I am awful as I can be. </br>
+                        You are a butterfly and I am just a mere moth on a wall. </br>
+                        I am a pest when compared to you. </br>
+                        How I wish to know why you love me </br>
+                        How can you be so special and love everyone and all? </br>
+                        How will I push through just to be someone like you?</h4>
+
+                        <audio controls>
+                            <source src="Petrarchan Sonnet.mp3" type="audio/mpeg">
+                        </audio>
+
+                      <label for="button2">Show Less</label> 
+                    </div>
+
+                      <label for="button2">Read More</label>  
+            </div>
+       
+            <div class="card-sonnet">
+                <input id="button3" type="checkbox">
+                  
+                    <h2>Lost Paintings</h2>
+                    <p>This sonnet expresses regret and longing for a relationship that faded from a once-vibrant bond. It captures the bittersweet realization that a love that had faded into memories tinged with regret and the weight of spent time had vanished. 
+                        It reflects on lost opportunities and the progressive dimming of shared experiences.</p> 
+                
+                    <div class="content">
+                    </br> </br> <h4> In the dance of our relationship, the melody shifted </br>
+                        How can I come back now that I long for your embrace? </br>
+                        What we shared, once aflame, has faded and is now a faint trace </br>
+                        I stood silent, not once were my lips lifted </br>
+                        Once a blank canvas, opportunities were then painted </br>
+                        Far into the unknown, in their absence, I discovered a hollow space </br>
+                        Time and opportunities, both a cherished lace </br>
+                        After hours had passed, I realized that time had drifted </br>                    
+                        Our light had turned dim, we started to diminish </br>
+                        The flickering flame had now been put out </br>
+                        The vivid memories we made were left to vanish </br>                      
+                        Past is past, what we had, we can only dream about </br>
+                        Opportunities thrown to waste, a route that leads us both to banish </br>
+                        Wasting time, feels like a journey astray, leading to the wrong route.</h4>
+
+                      <label for="button3">Show Less</label> 
+                    </div>
+
+                      <label for="button3">Read More</label>
+            </div>
+
+
+            
+        </div>
+
+        <p class="title">Shakespearean Sonnets</p>
+
+        <div class="container">
+            <div class="card-shakespearean">
+                <input id="button4" type="checkbox">
+                  
+                    <h2>Haunted Heart</h2>
+                    <p>This sonnet illustrates the leading lady's difficulty in trusting again despite the attraction of a new love, depicting the haunting aftermath of earlier heartbreak. 
+                        It explores the intricacies of emotional wounds and the difficulties of accepting love when plagued by the fear of experiencing the same suffering again.</p> 
+                
+                    <div class="content">
+                    </br> </br> <h4> In descents of love, she fears no grasp will save her, </br>
+                        As past romance shattered her to a state, </br>
+                        Daily accusations, left her in a maze, thoughts blurred. </br>
+                        Her calls ignored, his presence is a destined fate. </br>
+                        Should have ceased early, before it truly start, </br>
+                        In love’s pursuit, she gained bitter stings. </br>
+                        Broken trust, heart betrayed, soul torn apart, </br>
+                        Alone she stands, with burdens that cling. </br>
+                        Burdened alone, she starts anew, </br>
+                        Loads heavy, it weighs her down, </br>
+                        The new suitor’s love, purest and true, </br>
+                        Falls once more, her trust, a fragile crown. </br>
+                        In love’s embrace, she found a new role, </br>
+                        Struggles, fear of loss, her heart still cannot control. </h4>
+
+                      <label for="button4">Show Less</label> 
+                    </div>
+
+                      <label for="button4">Read More</label> 
+            </div>
+    
+            <div class="card-shakespearean">
+                <input id="button5" type="checkbox">
+                  
+                    <h2>Dog Without a Leash</h2>
+                    <p>This sonnet expresses regret for falling short of the beloved's expectations and laments the realization of a one-sided affection. 
+                        It portrays a sincere dedication to personal development and a quest to become worthy of the admired person's devotion, as well as a genuine desire to make up for previous mistakes and establish one's worthiness.</p> 
+                
+                    <div class="content">
+                    </br> </br> <h4> I assumed there was something between us. </br>
+                        Later, I realized there was no connection. </br>
+                        Look at you now, a lady so perfect and noble, like I never was. </br>
+                        Contrary to you, I am just an immature lad that cannot do motion nor simple action. </br> 
+                        Stay right beside me, that is my one and only wish. </br>
+                        I am nothing without you, would you please hold me near? </br>
+                        I am not worthy of you nor your tears, me, a mere dog without a leash. </br>
+                        I swore to do anything and humble myself for you, my dear. </br>
+                        Was there a word I uttered that made your heart shatter rather than give you laughter? </br>
+                        How I wish to go back in time to mend this wound. </br>
+                        I will do anything for that matter, to bring you relief with sweet water. </br>
+                        I want to do what I can for you or else my world would be doomed. </br>
+                        You are a mature and capable woman even when alone, while I am just here like a shadow on the backside wall. </br>
+                        Even so, I shall do everything in my capabilities to be of worthy of you, no matter how big or small. </h4>
+
+                      <label for="button5">Show Less</label> 
+                    </div>
+
+                      <label for="button5">Read More</label>  
+            </div>
+       
+            <div class="card-shakespearean">
+                <input id="button6" type="checkbox">
+                  
+                    <h2>Another Planet</h2>
+                    <p>This sonnet expresses intense admiration for someone whose unique smile and unparalleled presence inspire a strong sense of devotion and longing.
+                        It portrays an unearthly connection that surpasses everyday events and leaves the speaker speechless in the captivating atmosphere of their beloved, perfectly capturing their amazement.</p> 
+                
+                    <div class="content">
+                    </br> </br> <h4> This smile of yours, it is unique </br>
+                        Everywhere I look, everywhere I go </br>
+                        It's something I always seek </br>
+                        Where do I go, must I know? </br>
+                        You are the goddess that gives mecomfort </br>
+                        Every last ounce of my being, I would give just to be with you </br>
+                        I would even serve under gods, experience such discomfort </br>
+                        Simply to be in your presence, it is something I am willing to do </br>
+                        Everything about you, it is so different from people I have met in the past </br>
+                        My heart skips a beat while my mind wanders beyond outer space </br>
+                        Your beauty cannot be found in this world so vast </br>
+                        Any other word besides perfect would be a disgrace </br>
+                        I cannot breathe whenever you are here </br>
+                        Into space I go and it seems like in another planet, I appear</h4>
+
+                      <label for="button6">Show Less</label> 
+                    </div>
+
+                      <label for="button6">Read More</label>
+            </div>
+
+            
+
+
+            
+        </div>
+
+        <!--Footer Starts Here-->
+
+    <div class="nworks-footer">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+            <a href="https://youtu.be/BbeeuzU5Qc8?si=5nGrIZqSZGx3mniB" class="fab fa-youtube"></a>
+        </div>
+    </div>
+
+           <script>
+            function showSidebar() {
+                const sidebar = document.querySelector('.sidebar')
+                sidebar.style.display = 'flex'
+            }
+    
+            function hideSidebar() {
+                const sidebar = document.querySelector('.sidebar')
+                sidebar.style.display = 'none'
+            }
+           </script>
+</body>
+</html>
